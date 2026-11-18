@@ -4,17 +4,6 @@ Data and R code for the phylogenetic comparative analyses in:
 
 > **Nguyen L, Choi JY.** Plant telomere length is associated with warm-season temperature rather than life history. *Submitted.* Preprint: [DOI to be added]
 
-## The study in brief
-
-Telomeres cap the ends of chromosomes. In animals, telomere length is often linked to lifespan and pace of life. We estimated telomere length from public long-read genome sequencing data for 264 species, 257 of them land plants, and asked what explains the variation.
-
-- Telomere length has strong phylogenetic signal (Pagel's λ = 0.90).
-- Lifespan, growth form and ploidy are **not** associated with telomere length once phylogeny is taken into account.
-- Telomere length increases with the maximum temperature of the warmest month (CHELSA bio5): about **16% longer per 10 °C** (PGLS, p = 5.3 × 10⁻⁴; significant after correction for 34 tests).
-- The association holds after removing any single family or order, within PacBio and within Oxford Nanopore data, and at both young and old nodes of the tree.
-
-Telomere lengths were estimated with [Topsicle](https://github.com/jaeyoungchoilab/Topsicle). This repository starts from those estimates.
-
 ## Quick start
 
 Requires R (tested with 4.3.3) and six packages:
@@ -73,14 +62,6 @@ docs/analysis_walkthrough.md   what each analysis does, with code excerpts and t
 | In comparative analyses | `yes` for the 257 land plants in the phylogeny; `no` for the 7 green algae |
 
 
-## Methods at a glance
-
-- **PGLS** with Pagel's λ estimated by maximum likelihood (`phylolm`). Every model includes log10 read length as a covariate. Predictors are standardized when compared with each other.
-- **Multiple testing:** Benjamini–Hochberg, and a correction for the effective number of independent tests (Li and Ji 2005) because many climate variables are correlated.
-- **Multi-response phylogenetic mixed models** (`MCMCglmm`; Halliwell et al. 2025) to separate phylogenetic from residual correlation.
-- **Phylogenetic timing:** disparity through time (Harmon et al. 2003), node-height tests (Freckleton and Harvey 2006) and regressions of independent contrasts (Felsenstein 1985) at young and old nodes.
-
-
 ## Contact
 
-Jae Young Choi, Department of Ecology and Evolutionary Biology, University of Kansas. Lab website: [jychoilab.github.io](https://jychoilab.github.io). Questions and problems: please open an issue in this repository.
+Jae Young Choi, Department of Ecology and Evolutionary Biology, University of Kansas. Lab website: [jychoilab.github.io](https://jychoilab.github.io). 
