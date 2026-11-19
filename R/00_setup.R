@@ -8,6 +8,9 @@ suppressPackageStartupMessages({
   library(geiger)     # fitContinuous, disparity through time
   library(MASS)       # robust regression (node-height tests)
 })
+## caper (Pagel's lambda with profile-likelihood CI, script 03) is used as caper::pgls and not attached,
+## because its pgls() has the same name as the pgls() helper defined below.
+if (!requireNamespace("caper", quietly = TRUE)) stop("Please install caper: install.packages(\"caper\")")
 dir.create("results", showWarnings = FALSE)
 
 ## ---------------------------------------------------------------------------
