@@ -44,7 +44,6 @@ R/
   08_mrpmm.R                   Bayesian multi-response phylogenetic mixed models
   09_phylogenetic_timing.R     disparity through time, node-height tests, contrasts by node age
 run_all.R                      runs steps 01-09
-results/                       output of each script (CSV) and the MCMC chains used in the paper
 docs/analysis_walkthrough.md   what each analysis does, with code excerpts and the numbers it produces
 ```
 
